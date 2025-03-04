@@ -32,4 +32,3 @@ build/
 ### VS Code ###
 BE/law-qa-system/src/main/resources/application.properties
 .vscode/
-echo ".env" >> .gitignore
