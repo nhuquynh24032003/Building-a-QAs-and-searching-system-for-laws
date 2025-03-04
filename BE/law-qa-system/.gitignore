@@ -30,5 +30,6 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-src/main/resources/application.properties
+BE/law-qa-system/src/main/resources/application.properties
 .vscode/
+echo ".env" >> .gitignore
