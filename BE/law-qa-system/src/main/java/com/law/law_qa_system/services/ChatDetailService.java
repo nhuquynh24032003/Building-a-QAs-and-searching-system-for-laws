@@ -6,6 +6,7 @@ import com.law.law_qa_system.configurations.OpenAIConfig;
 import com.law.law_qa_system.models.ChatDetailHistory;
 import com.law.law_qa_system.repositories.ChatDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -17,10 +18,11 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
+
 public class ChatDetailService {
     private final String url = "https://api.openai.com/v1/chat/completions";
-    private static final String OPENAI_API_KEY = "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";
-
+    @Value("${openai.api.key}")
+    private String OPENAI_API_KEY;
     @Autowired
     private OpenAIConfig openAIConfig;
     @Autowired

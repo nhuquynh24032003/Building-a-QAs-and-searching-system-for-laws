@@ -3,6 +3,7 @@ package com.law.law_qa_system.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -13,7 +14,8 @@ import java.util.Map;
 
 @Service
 public class OpenAIService {
-    private static final String OPENAI_API_KEY = "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";
+    @Value("${openai.api.key}")
+    private String OPENAI_API_KEY;
     public String rerankChunks(String userInput, List<String> chunks) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
